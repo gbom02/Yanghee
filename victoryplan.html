@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양희 후보 대구 동구청장 선거 통합 전략 보고서 (2025)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F3F4F6;
+            color: #1F2937;
+        }
+        /* Chart Container Logic */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width constraint */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        /* Custom Utilities */
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            /* Updated border color to PI Yellow (#ffed00) */
+            border-left: 5px solid #ffed00; 
+            padding-left: 0.75rem;
+        }
+        /* Custom PI Yellow for Tailwind (Since direct hex in classes can be verbose) */
+        .text-pi-yellow { color: #ffed00; }
+        .border-pi-yellow { border-color: #ffed00; }
+    </style>
+    <!-- 
+        Palette: Justice Party PI '너랑노랑' (#ffed00) & Contrast
+        PI Yellow (Primary/Action/Solidarity): #ffed00
+        Accent (Urgency/Tipping Point): #F97316 (Orange-500)
+        General Accent (Strategy/Future): #2563EB (Blue-600)
+        Dark/Text Contrast: #1E3A8A (Dark Blue) / text-yellow-900 for readability on light yellow BG.
+        
+        Narrative Plan:
+        1. Intro: The Challenge (1% -> 40%) - PI Yellow emphasized.
+        2. Goals: The Targets (Bar Chart) - Realistic Victory bar is PI Yellow.
+        3. Timeline: The Growth Curve (Line Chart) - Line color is PI Yellow.
+        4. Environment: SWOT (Grid) - Strength is PI Yellow.
+        5. Strategy: Dual Zone Analysis (Radar Chart) - Future Change Zone is PI Yellow.
+        6. Execution: Phased Tactics (Timeline List) - Steps use PI Yellow and contrast colors.
+    -->
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+    <!-- Navigation/Header: Accent color changed to PI Yellow -->
+    <header class="bg-gray-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Used custom PI Yellow class -->
+            <h1 class="text-xl md:text-2xl font-black">2025 양희 전략 보고서 <span class="text-pi-yellow font-normal">| 정의당</span></h1>
+            <!-- Used Tailwind's yellow-500 -->
+            <span class="text-xs md:text-sm font-bold bg-yellow-500 text-gray-900 px-3 py-1 rounded-full">D-DAY 승리 플랜</span>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-12 max-w-5xl">
+
+        <!-- Hero Section: Changed border color and text accents to PI Yellow -->
+        <section class="text-center py-12 bg-white rounded-2xl shadow-xl border-t-8 border-pi-yellow">
+            <h2 class="text-4xl md:text-6xl font-black text-gray-800 mb-4">1%의 기적 <span class="text-pi-yellow">➤</span> 40%의 승리</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                현재 지지율 1% 미만의 현실을 직시하고, <span class="font-black text-yellow-600">노동, 약자, 미래를 위한 연대와 공존</span>을 기치로 보수 이탈표 흡수와 진보/중도 통합을 통해 <br class="hidden md:inline">
+                <span class="font-bold text-gray-800">대구 동구청장 선거</span>의 판을 뒤집습니다.
+            </p>
+        </section>
+
+        <!-- Section 1: Strategic Targets -->
+        <section>
+            <div class="mb-6">
+                <h3 class="section-title">Ⅰ. 전략 목표: 현실적 승리를 향하여</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    우리는 막연한 승리가 아닌, 구체적인 수치에 기반한 목표를 설정했습니다. 
+                    <span class="font-bold text-yellow-600">최종 목표 40%</span>는 숙원 해결 Zone에서의 보수 이탈과 미래 변화 Zone의 압도적 지지가 결합될 때 달성 가능합니다.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Visual: Bar Chart -->
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <div class="chart-container">
+                        <canvas id="targetChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-2 font-medium">▲ 시나리오별 목표 득표율 설정</p>
+                </div>
+                
+                <!-- Content: Context -->
+                <div class="space-y-4">
+                    <div class="p-4 bg-gray-50 border-l-4 border-blue-500 rounded-r-lg">
+                        <h4 class="font-bold text-blue-800 text-lg">🟦 최소 목표 (20%)</h4>
+                        <p class="text-sm text-gray-700">진보/개혁 진영의 대표 주자로 등극하며 차기 경쟁력을 확보하는 마지노선입니다.</p>
+                    </div>
+                    <!-- Updated highlight color to PI Yellow and text color for contrast -->
+                    <div class="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg shadow-sm transform scale-105">
+                        <h4 class="font-bold text-yellow-900 text-lg">🟡 현실적 승리 (40%) - MAIN</h4>
+                        <p class="text-sm text-gray-700">국민의힘 조직력 약화의 틈을 타 다득표로 승리하는 <strong>최우선 목표</strong>입니다. 정의당의 대안 정당 이미지를 극대화합니다.</p>
+                    </div>
+                    <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-lg">
+                        <h4 class="font-bold text-orange-700 text-lg">🟧 최대 목표 (45%)</h4>
+                        <p class="text-sm text-gray-700">숙원 해결 Zone의 보수 이탈층을 대거 흡수했을 때 가능한 기적적인 수치입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Roadmap -->
+        <section>
+            <div class="mb-6">
+                <h3 class="section-title">Ⅱ. 성장 로드맵: 임계점 돌파 전략</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    승리는 한 순간에 이루어지지 않습니다. D-Day까지 남은 기간을 3단계로 나누어, 각 단계별 
+                    <span class="font-bold text-yellow-600">전략적 임계점(Tipping Point)</span>을 돌파해야 합니다. 
+                    특히 D-30 시점의 15% 돌파가 승패를 가를 분수령이 될 것입니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="chart-container" style="max-height: 350px;">
+                    <canvas id="roadmapChart"></canvas>
+                </div>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <span class="block text-xs font-bold text-gray-400">Phase I</span>
+                        <strong class="text-lg text-blue-600">정체성 발견과 통합</strong>
+                        <p class="text-xs text-gray-500">정의당 후보 이미지 확립</p>
+                    </div>
+                    <div>
+                        <span class="block text-xs font-bold text-gray-400">Phase II</span>
+                        <strong class="text-lg text-orange-600">확산과 확장</strong>
+                        <p class="text-xs text-gray-500">노동 현장 & SNS 집중 공략</p>
+                    </div>
+                    <div>
+                        <span class="block text-xs font-bold text-gray-400">Phase III</span>
+                        <!-- Changed text color to yellow-600 -->
+                        <strong class="text-lg text-yellow-600">클로저 & 승리</strong>
+                        <p class="text-xs text-gray-500">대안 정당 구도 굳히기</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: SWOT Analysis -->
+        <section>
+            <div class="mb-6">
+                <h3 class="section-title">Ⅲ. 핵심 전략 환경 분석 (SWOT)</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    우리의 강점인 '현장성'과 정의당의 '깨끗함'으로 보수 텃밭의 약점을 파고듭니다. 
+                    현직 구청장의 사법 리스크는 우리에게 '심판론'을 제기할 강력한 기회(Opportunity)입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Strength: Changed color to PI Yellow -->
+                <div class="bg-yellow-50 p-5 rounded-lg border-t-4 border-yellow-500">
+                    <h4 class="font-black text-yellow-900 text-lg mb-2">💪 강점 (Strength)</h4>
+                    <ul class="list-none space-y-2 text-sm text-gray-700">
+                        <li>✅ <strong>현장성 & 깨끗한 이미지</strong>: 기성 정치와 차별화 (정의당 PI)</li>
+                        <li>✅ <strong>최초의 승리 경험</strong>: 민주당 출신 대비 경쟁력 우위</li>
+                        <li>➔ <span class="text-yellow-600 font-bold">전략:</span> 노동, 약자 중심 메시지로 보수 이탈표 흡수</li>
+                    </ul>
+                </div>
+                <!-- Weakness: Retain Orange for Warning -->
+                <div class="bg-orange-50 p-5 rounded-lg border-t-4 border-orange-500">
+                    <h4 class="font-black text-orange-700 text-lg mb-2">⚠️ 약점 (Weakness)</h4>
+                    <ul class="list-none space-y-2 text-sm text-gray-700">
+                        <li>🔻 <strong>낮은 인지도</strong>: 현재 지지율 1% 미만</li>
+                        <li>🔻 <strong>조직력 열세</strong>: 거대 정당 대비 부족한 기반</li>
+                        <li>➔ <span class="text-orange-600 font-bold">전략:</span> 블리츠 유세로 인지도 단기 급상승</li>
+                    </ul>
+                </div>
+                <!-- Opportunity: Retain Blue for Future/Strategy -->
+                <div class="bg-blue-50 p-5 rounded-lg border-t-4 border-blue-500">
+                    <h4 class="font-black text-blue-700 text-lg mb-2">🚀 기회 (Opportunity)</h4>
+                    <ul class="list-none space-y-2 text-sm text-gray-700">
+                        <li>✨ <strong>현직 리스크</strong>: 구청장 사법 리스크로 인한 심판론</li>
+                        <li>✨ <strong>20년 숙원</strong>: 해결되지 않은 지역 문제에 대한 피로감</li>
+                        <li>➔ <span class="text-blue-600 font-bold">전략:</span> "양희가 끝낸다" 메시지 확산</li>
+                    </ul>
+                </div>
+                <!-- Threat: Retain Red for Danger -->
+                <div class="bg-red-50 p-5 rounded-lg border-t-4 border-red-500">
+                    <h4 class="font-black text-red-700 text-lg mb-2">🛡️ 위협 (Threat)</h4>
+                    <ul class="list-none space-y-2 text-sm text-gray-700">
+                        <li>⛔ <strong>보수 결집</strong>: 위기감에 따른 조직표 결집</li>
+                        <li>⛔ <strong>표 분산</strong>: 진보 진영 내 표 갈라치기</li>
+                        <li>➔ <span class="text-red-600 font-bold">전략:</span> '양희 vs 김철수' 양강 구도 조기 형성</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Dual Zone Strategy -->
+        <section>
+            <div class="mb-6">
+                <h3 class="section-title">Ⅳ. 동네별 맞춤 전략 (Zone Targeting)</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    동구는 단일한 선거구가 아닙니다. <span class="font-bold text-orange-600">숙원 해결 Zone</span>(구도심)과 
+                    <span class="font-bold text-yellow-600">미래 변화 Zone</span>(혁신도시)은 유권자 성향과 니즈가 완전히 다릅니다. 
+                    각 지역에 맞는 차별화된 메시지가 필요합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Visual: Radar Chart -->
+                <div class="bg-white p-4 rounded-xl shadow-md order-2 md:order-1">
+                    <div class="chart-container">
+                        <canvas id="zoneRadarChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-2 font-medium">▲ 지역별 유권자 특성 비교</p>
+                </div>
+
+                <!-- Content: Zone Details -->
+                <div class="space-y-6 order-1 md:order-2">
+                    <!-- Zone A: Retain Orange for contrast and 'old problem' feel -->
+                    <div class="bg-white border-l-8 border-orange-500 p-4 shadow-sm">
+                        <h4 class="font-bold text-xl text-orange-600 mb-1">🏗️ 숙원 해결 Zone</h4>
+                        <p class="text-xs text-gray-400 mb-2">지저동, 해안동 (50~60대 중심)</p>
+                        <p class="text-sm font-bold text-gray-800 mb-1">"20년 숙원, 양희가 끝낸다!"</p>
+                        <p class="text-sm text-gray-600">침수, 소음 문제의 해결사 이미지를 각인시켜 보수 이탈표를 공략합니다.</p>
+                    </div>
+
+                    <!-- Zone B: Changed color to PI Yellow -->
+                    <div class="bg-white border-l-8 border-yellow-500 p-4 shadow-sm">
+                        <h4 class="font-bold text-xl text-yellow-600 mb-1">🏙️ 미래 변화 Zone</h4>
+                        <p class="text-xs text-gray-400 mb-2">혁신동, 안심지구 (20~40대 중심)</p>
+                        <p class="text-sm font-bold text-gray-800 mb-1">"젊고 깨끗한 정의로운 변화의 대안"</p>
+                        <p class="text-sm text-gray-600">SNS 타겟 광고와 육아/문화 공약으로 중도/진보층을 결집합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Execution Timeline -->
+        <section class="pb-12">
+            <div class="mb-6">
+                <h3 class="section-title">Ⅴ. 실행 로드맵 (Action Plan)</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    선거일까지 남은 기간 동안 각 주체가 수행해야 할 구체적인 미션입니다.
+                </p>
+            </div>
+
+            <div class="relative border-l-4 border-gray-300 ml-4 md:ml-6 space-y-8">
+                <!-- Step 1: Retain Blue (Strategy/Foundation) -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3.5 bg-blue-500 h-6 w-6 rounded-full border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">D-90 ~ D-60</span>
+                        <h4 class="text-lg font-bold text-gray-800 mt-1">기반 조성: 정의당 정체성 확립</h4>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                            <li>• <strong>정책팀:</strong> 숙원 해결 3대 핵심 공약 발표</li>
+                            <li>• <strong>조직팀:</strong> 오피니언 리더 50인 우호 세력화</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2: Retain Orange (Urgency/Tipping Point) -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3.5 bg-orange-500 h-6 w-6 rounded-full border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border-r-4 border-orange-200">
+                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">D-60 ~ D-30</span>
+                        <h4 class="text-lg font-bold text-gray-800 mt-1">임계점 돌파: 노동/현장 메시지 확산</h4>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                            <li>• <strong>BLITZ 유세:</strong> 노동자 밀집 지역 및 피해 현장 집중 공략</li>
+                            <li>• <strong>Digital:</strong> "양희가 끝낸다" 숏폼 챌린지 확산</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3: Changed color to PI Yellow (Victory/Closer) -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3.5 bg-yellow-500 h-6 w-6 rounded-full border-4 border-white shadow"></div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <span class="text-xs font-bold text-yellow-600 uppercase tracking-wide">D-30 ~ D-Day</span>
+                        <h4 class="text-lg font-bold text-gray-800 mt-1">승리 확정: 정의로운 통합과 결집</h4>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                            <li>• <strong>전략팀:</strong> 양희 vs 김철수 양강 구도 굳히기</li>
+                            <li>• <strong>Total:</strong> 대규모 합동 유세 및 투표 독려 (2040 타겟)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm py-8 border-t border-gray-200 mt-8">
+            <p>© 2025 양희 선거대책위원회 전략기획실 | 대외비 (Confidential)</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Utility: Label Wrapping Function (Strict 16-char limit requirement) ---
+        function wrapLabels(labels, maxChars = 16) {
+            return labels.map(label => {
+                if (label.length <= maxChars) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + " " + words[i]).length <= maxChars) {
+                        currentLine += " " + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        // --- Shared Tooltip Configuration (Mandatory) ---
+        const sharedTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // PI Yellow (너랑노랑) configuration
+        const piYellowHex = '#ffed00';
+        const piYellowRgba = 'rgba(255, 237, 0, 0.2)'; // Adjusted alpha for fill
+
+        // --- Chart 1: Target Scenarios (Bar Chart) ---
+        const ctxTarget = document.getElementById('targetChart').getContext('2d');
+        const targetLabels = wrapLabels(['최소 목표 (진보 대표)', '현실적 승리 (너랑노랑 PI)', '최대 목표 (기적적 승리)']);
+        
+        new Chart(ctxTarget, {
+            type: 'bar',
+            data: {
+                labels: targetLabels,
+                datasets: [{
+                    label: '목표 득표율 (%)',
+                    data: [20, 40, 45],
+                    // Updated Realistic Victory color to PI Yellow (#ffed00)
+                    backgroundColor: ['#93C5FD', piYellowHex, '#F97316'], 
+                    borderColor: ['#2563EB', '#CCBB00', '#C2410C'], // Darker yellow border
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: sharedTooltipConfig,
+                    title: {
+                        display: true,
+                        text: '득표율 목표 시나리오 (단위: %)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 60,
+                        grid: { color: '#E5E7EB' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Roadmap (Line Chart) ---
+        const ctxRoadmap = document.getElementById('roadmapChart').getContext('2d');
+        const roadmapLabels = wrapLabels(['D-90 (현재)', 'D-60 (기반 조성)', 'D-30 (임계점 돌파)', 'D-Day (최종 목표)']);
+
+        new Chart(ctxRoadmap, {
+            type: 'line',
+            data: {
+                labels: roadmapLabels,
+                datasets: [{
+                    label: '예상 지지율 (%)',
+                    data: [1, 5, 15, 40],
+                    // Updated line color to PI Yellow and fill color
+                    borderColor: piYellowHex,
+                    backgroundColor: piYellowRgba,
+                    // Updated final point color to PI Yellow
+                    pointBackgroundColor: ['#9CA3AF', '#93C5FD', '#F97316', piYellowHex],
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: sharedTooltipConfig,
+                    legend: { display: false },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                yMin: 35,
+                                yMax: 35,
+                                borderColor: 'rgba(249, 115, 22, 0.5)',
+                                borderWidth: 2,
+                                borderDash: [6, 6],
+                                label: {
+                                    content: '승리 가능권 (35%)',
+                                    enabled: true,
+                                    position: 'start'
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50,
+                        title: { display: true, text: '지지율 (%)' }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 3: Zone Analysis (Radar Chart) ---
+        const ctxZone = document.getElementById('zoneRadarChart').getContext('2d');
+        // Dimensions: Age (High=Old), Conservatism, Desire for Change, Issue Sensitivity
+        const zoneDimensions = wrapLabels(['유권자 연령대 (고령)', '보수 성향 강도', '변화 갈망 지수', '지역 현안 민감도']);
+
+        new Chart(ctxZone, {
+            type: 'radar',
+            data: {
+                labels: zoneDimensions,
+                datasets: [
+                    {
+                        label: '숙원 해결 Zone (지저/해안)',
+                        data: [90, 95, 40, 95], // High Age, High Con, Low Change, High Issue
+                        fill: true,
+                        backgroundColor: 'rgba(249, 115, 22, 0.2)', // Orange
+                        borderColor: '#F97316',
+                        pointBackgroundColor: '#F97316'
+                    },
+                    {
+                        label: '미래 변화 Zone (혁신/안심)',
+                        data: [30, 30, 90, 60], // Low Age, Low Con, High Change, Med Issue
+                        fill: true,
+                        // Updated color to PI Yellow
+                        backgroundColor: piYellowRgba, 
+                        borderColor: piYellowHex,
+                        pointBackgroundColor: piYellowHex
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: sharedTooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E5E7EB' },
+                        grid: { color: '#E5E7EB' },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { display: false } // Hide numbers for cleaner look
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
