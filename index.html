@@ -22,10 +22,11 @@
     <!--
         Narrative Plan:
         1. Intro/Hook: Establish the candidate's identity and the core "Winning Slogans".
-        2. Organization: Visualize the 5-team structure and their strategic roles using a Polar Area chart.
-        3. Infrastructure: Explain the Notion-based digital workflow using a Doughnut chart.
-        4. Timeline: Visualize the critical path for the "Candidate Interview" project using a Bar chart.
-        5. Strategy: Show the synergy between slogans and the field strategy using a Stacked Bar chart (Simulated data).
+        2. Tipping Point: Visualize the 3 strategic axes for the 40% goal (NEW SECTION).
+        3. Organization: Visualize the 5-team structure.
+        4. Infrastructure: Explain the Notion-based digital workflow.
+        5. Timeline: Visualize the critical path for the "Candidate Interview" project.
+        6. Strategy: Show the synergy between slogans and the field strategy.
     -->
     <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in this output. -->
 
@@ -90,9 +91,9 @@
             </div>
             <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-600">
                 <a href="#vision" class="hover:text-[#00BFFF] transition">비전 & 슬로건</a>
+                <a href="#tipping" class="hover:text-[#FF4500] transition">40% 승리 공식</a>
+                <a href="#priority" class="hover:text-[#FFD700] transition">최우선 실행</a>
                 <a href="#organization" class="hover:text-[#00BFFF] transition">조직 구성</a>
-                <a href="#system" class="hover:text-[#00BFFF] transition">디지털 시스템</a>
-                <a href="#timeline" class="hover:text-[#00BFFF] transition">실행 타임라인</a>
             </div>
         </div>
     </header>
@@ -133,16 +134,98 @@
                     <h3 class="text-lg font-bold text-slate-800">슬로건별 기대 효과 분석</h3>
                     <p class="text-sm text-slate-500">메인 슬로건과 보조 슬로건의 역할 분담</p>
                 </div>
-                <!-- HTML Comment: Data Point -> Goal: Compare -> Visualization: Radar Chart -> Justification: Shows how different slogans score on different emotional metrics -->
+                <!-- HTML Comment: Radar Chart -->
                 <div class="chart-container">
                     <canvas id="sloganChart"></canvas>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Organization Structure -->
-        <section id="organization">
+        <!-- Section 2: Tipping Point Analysis (NEW SECTION) -->
+        <section id="tipping" class="bg-red-500 rounded-2xl p-8 text-white shadow-xl">
+            <h2 class="text-4xl font-black mb-4 text-center">40% 득표 승리 공식 <span class="text-yellow-300">TIPPING POINT</span></h2>
+            <p class="text-center text-red-100 mb-8 max-w-4xl mx-auto">
+                40% 목표는 **3가지 핵심 전제**가 동시에 충족될 때 달성 가능한 전략적 수치입니다. 이는 현직 리스크라는 기회를 완벽하게 활용하는 **전략적 승리 목표**입니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tipping Point 1 -->
+                <div class="card p-6 bg-white text-slate-800 border-b-4 border-[#FF4500]">
+                    <h3 class="font-black text-xl mb-2 text-[#FF4500]">1. 보수 이탈 극대화</h3>
+                    <p class="text-sm text-slate-600 mb-3">숙원 해결 Zone (구도심)에서 **현직 피로감**을 흡수하여 보수 이탈표 **20%**를 흡수해야 합니다.</p>
+                    <div class="flex items-center justify-between text-lg font-bold">
+                        <span>타겟: 보수 이탈표</span>
+                        <span class="text-3xl text-[#FF4500]">20%</span>
+                    </div>
+                </div>
+
+                <!-- Tipping Point 2 -->
+                <div class="card p-6 bg-white text-slate-800 border-b-4 border-[#FFD700]">
+                    <h3 class="font-black text-xl mb-2 text-[#FFD700]">2. 미래 변화 압도</h3>
+                    <p class="text-sm text-slate-600 mb-3">미래 변화 Zone (혁신도시)의 젊은 층에게 **공존과 변화** 메시지로 압도적 **70%** 지지를 확보해야 합니다.</p>
+                    <div class="flex items-center justify-between text-lg font-bold">
+                        <span>타겟: 젊은 층 지지율</span>
+                        <span class="text-3xl text-[#FFD700]">70%</span>
+                    </div>
+                </div>
+                
+                <!-- Tipping Point 3 -->
+                <div class="card p-6 bg-white text-slate-800 border-b-4 border-[#00BFFF]">
+                    <h3 class="font-black text-xl mb-2 text-[#00BFFF]">3. 양강 구도 조기 구축</h3>
+                    <p class="text-sm text-slate-600 mb-3">D-30 시점에 **양희가 승리할 수 있다**는 신뢰를 바탕으로 지지율 **15% 임계점**을 돌파해야 합니다.</p>
+                    <div class="flex items-center justify-between text-lg font-bold">
+                        <span>타겟: D-30 임계점</span>
+                        <span class="text-3xl text-[#00BFFF]">15%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Action Priority (NEW SECTION) -->
+        <section id="priority">
             <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">가장 시급한 선행 조치 (Action Priority)</h2>
+                <p class="text-slate-600">
+                    현재 최저 인지도를 깨고 **후보의 정체성**을 각인시키는 것이 최우선입니다. 
+                    로드맵 Phase I (D-90 ~ D-60)의 **2대 절대 우선 행동**을 즉시 실행합니다.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Priority 1: Policies -->
+                <div class="card p-6 border-t-4 border-[#FFD700] bg-slate-50">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl font-black mr-3 text-[#FFD700]">#1</span>
+                        <h3 class="text-xl font-bold text-slate-800">정책팀: 숙원 해결 3대 공약 전격 발표</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        현직이 해결하지 못한 **20년 이상된 지역 숙원 사업** 3가지를 선정합니다. 구체적인 로드맵과 함께 발표하여 **'해결사'** 이미지를 단숨에 각인시키고 보수 이탈의 명분을 제공합니다.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-slate-700 font-medium">
+                        <li>(예시) 침수 피해, 공항 소음 해결, 핵심 교통망 구축</li>
+                        <li>목표: 인지도 상승 및 '해결사' 정체성 확립</li>
+                    </ul>
+                </div>
+
+                <!-- Priority 2: Organization -->
+                <div class="card p-6 border-t-4 border-[#00BFFF] bg-slate-50">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl font-black mr-3 text-[#00BFFF]">#2</span>
+                        <h3 class="text-xl font-bold text-slate-800">조직팀: 오피니언 리더 50인 우호 세력화</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        조직력 열세 극복을 위해 지역 내 소규모 영향력자 **50인**을 확보합니다. '소문 마케팅'과 '간접 조직력'을 형성하여 캠페인 초반 추진력을 확보하고 연대 구도를 상징화합니다.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-slate-700 font-medium">
+                        <li>(구성) 진보-중도-합리적 보수를 아우르는 상징적 50인</li>
+                        <li>목표: 조직력 보완 및 '양강 구도' 신뢰 형성</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Organization Structure (Original Section 2) -->
+        <section id="organization">
+            <div class="mb-8 text-center max-w-3xl mx-auto pt-8">
                 <h2 class="text-3xl font-bold text-slate-800 mb-4">선거본부 핵심 조직도</h2>
                 <p class="text-slate-600">
                     <strong>Rafael 선대본부장</strong>을 중심으로 5개의 핵심 팀이 유기적으로 연결되어 있습니다. 
@@ -157,7 +240,7 @@
                         <h3 class="text-lg font-bold text-slate-800">팀별 전략적 가중치 (Activity Weight)</h3>
                         <p class="text-sm text-slate-500">초기 선거 전략 수립 단계에서의 업무 집중도</p>
                     </div>
-                    <!-- HTML Comment: Data Point -> Goal: Organize/Compare -> Visualization: Polar Area Chart -> Justification: Shows the cyclic nature of the 5 teams surrounding the center and their current activity load. -->
+                    <!-- HTML Comment: Polar Area Chart -->
                     <div class="chart-container">
                         <canvas id="orgChart"></canvas>
                     </div>
@@ -197,7 +280,7 @@
             </div>
         </section>
 
-        <!-- Section 3: Digital Infrastructure (Notion) -->
+        <!-- Section 5: Digital Infrastructure (Original Section 3) -->
         <section id="system" class="bg-slate-800 rounded-2xl p-8 text-white shadow-xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -224,7 +307,7 @@
                 
                 <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm">
                     <h3 class="text-lg font-bold mb-4 text-center">플랫폼 의존도 및 활용 비중</h3>
-                    <!-- HTML Comment: Data Point -> Goal: Compare/Proportion -> Visualization: Doughnut Chart -> Justification: Shows the clear dominance of Notion as the central hub. -->
+                    <!-- HTML Comment: Doughnut Chart -->
                     <div class="chart-container text-slate-900">
                         <canvas id="digitalChart"></canvas>
                     </div>
@@ -232,7 +315,7 @@
             </div>
         </section>
 
-        <!-- Section 4: Timeline & Execution -->
+        <!-- Section 6: Timeline & Execution (Original Section 4) -->
         <section id="timeline">
             <div class="mb-8">
                 <h2 class="text-3xl font-bold text-slate-800 mb-2">후보 심층 인터뷰 프로젝트</h2>
@@ -250,7 +333,7 @@
                         <h3 class="text-lg font-bold text-slate-800">제작 및 배포 타임라인 (Workload Intensity)</h3>
                         <span class="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">2025.12.09 - 12.15</span>
                     </div>
-                    <!-- HTML Comment: Data Point -> Goal: Change/Schedule -> Visualization: Bar Chart (Time-based) -> Justification: Shows the sequence and intensity of work over the specific dates. -->
+                    <!-- HTML Comment: Bar Chart -->
                     <div class="chart-container">
                         <canvas id="timelineChart"></canvas>
                     </div>
@@ -259,30 +342,41 @@
                 <!-- Action Items -->
                 <div class="space-y-4">
                     <div class="card p-5 border-l-4 border-slate-400">
-                        <span class="text-xs font-bold text-slate-400">D+1 (수)</span>
+                        <span class="text-xs font-bold text-slate-400">Day 1 (화) - 12/9</span>
                         <h4 class="font-bold text-slate-800">사전 기획 완료</h4>
                         <p class="text-sm text-slate-600">질문지 확정, 장소 섭외 (홍보/정책)</p>
                     </div>
                     <div class="card p-5 border-l-4 border-[#FF4500]">
-                        <span class="text-xs font-bold text-[#FF4500]">D+2 (목) - CRITICAL</span>
+                        <span class="text-xs font-bold text-[#FF4500]">Day 3 (목) - CRITICAL</span>
                         <h4 class="font-bold text-slate-800">메인 촬영</h4>
                         <p class="text-sm text-slate-600">지저동 침수 현장 등 '숙원 현장' 배경 리포팅 포함</p>
                     </div>
                     <div class="card p-5 border-l-4 border-[#FFD700]">
-                        <span class="text-xs font-bold text-slate-500">D+3~5 (주말)</span>
+                        <span class="text-xs font-bold text-slate-500">Day 4-6 (금-일)</span>
                         <h4 class="font-bold text-slate-800">편집 및 컨펌</h4>
                         <p class="text-sm text-slate-600">스토리텔링 강화, 슬로건 자막 작업</p>
                     </div>
                     <div class="card p-5 border-l-4 border-[#00BFFF]">
-                        <span class="text-xs font-bold text-[#00BFFF]">D+6 (월) 18:00</span>
+                        <span class="text-xs font-bold text-[#00BFFF]">Day 7 (월) 18:00</span>
                         <h4 class="font-bold text-slate-800">콘텐츠 공개</h4>
                         <p class="text-sm text-slate-600">유튜브/SNS 동시 업로드 & 조직 공유</p>
+                    </div>
+                    
+                    <!-- Critical Path Highlight -->
+                    <div class="card p-5 bg-[#FF4500] text-white shadow-lg">
+                        <h4 class="font-black text-xl mb-1 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.859 2.723 2.508 2.723h13.713c1.649 0 3.373-1.223 2.508-2.723L12 2.25l-8.303 12.893zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                            #1 우선순위: 인터뷰 완수
+                        </h4>
+                        <p class="text-sm">Day 3 (목) 메인 촬영은 **절대 놓쳐서는 안 될** 임계점입니다. 현장팀과 홍보팀의 완벽한 협업이 필요합니다.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 5: Target Analysis -->
+        <!-- Section 7: Target Analysis (Original Section 5) -->
          <section id="targets" class="card p-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -300,7 +394,7 @@
                     </div>
                 </div>
                 <div class="chart-container">
-                    <!-- HTML Comment: Data Point -> Goal: Relationships/Compare -> Visualization: Stacked Bar Chart -> Justification: Shows the overlap of regional issues with age demographics to target. -->
+                    <!-- HTML Comment: Stacked Bar Chart -->
                     <canvas id="targetChart"></canvas>
                 </div>
             </div>
@@ -356,171 +450,174 @@
             }
         };
 
-        // --- Chart 1: Slogan Impact (Radar Chart) ---
-        const ctxSlogan = document.getElementById('sloganChart').getContext('2d');
-        new Chart(ctxSlogan, {
-            type: 'radar',
-            data: {
-                labels: processLabels(['신뢰도 (Trust)', '행동 유발 (Action)', '기억 용이성', '정책 전달력', '감정 호소력']),
-                datasets: [{
-                    label: '메인: "오래된 숙원..."',
-                    data: [95, 70, 80, 100, 90],
-                    backgroundColor: 'rgba(255, 215, 0, 0.2)', // Yellow transparent
-                    borderColor: '#FFD700',
-                    pointBackgroundColor: '#FFD700',
-                    borderWidth: 2
-                }, {
-                    label: '보조: "양희가 끝낸다!"',
-                    data: [60, 100, 95, 50, 85],
-                    backgroundColor: 'rgba(0, 191, 255, 0.2)', // Blue transparent
-                    borderColor: '#00BFFF',
-                    pointBackgroundColor: '#00BFFF',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: { position: 'bottom' },
-                    tooltip: commonTooltipOptions
+        // DOM이 완전히 로드된 후 차트 초기화를 보장합니다.
+        window.onload = function() {
+            // --- Chart 1: Slogan Impact (Radar Chart) ---
+            const ctxSlogan = document.getElementById('sloganChart').getContext('2d');
+            new Chart(ctxSlogan, {
+                type: 'radar',
+                data: {
+                    labels: processLabels(['신뢰도 (Trust)', '행동 유발 (Action)', '기억 용이성', '정책 전달력', '감정 호소력']),
+                    datasets: [{
+                        label: '메인: "오래된 숙원..."',
+                        data: [95, 70, 80, 100, 90],
+                        backgroundColor: 'rgba(255, 215, 0, 0.2)', // Yellow transparent
+                        borderColor: '#FFD700',
+                        pointBackgroundColor: '#FFD700',
+                        borderWidth: 2
+                    }, {
+                        label: '보조: "양희가 끝낸다!"',
+                        data: [60, 100, 95, 50, 85],
+                        backgroundColor: 'rgba(0, 191, 255, 0.2)', // Blue transparent
+                        borderColor: '#00BFFF',
+                        pointBackgroundColor: '#00BFFF',
+                        borderWidth: 2
+                    }]
                 },
-                scales: {
-                    r: {
-                        angleLines: { color: '#E2E8F0' },
-                        grid: { color: '#E2E8F0' },
-                        pointLabels: {
-                            font: { size: 12, family: "'Noto Sans KR', sans-serif", weight: 'bold' }
-                        },
-                        suggestedMin: 0,
-                        suggestedMax: 100
-                    }
-                }
-            }
-        });
-
-        // --- Chart 2: Organization Structure (Polar Area) ---
-        const ctxOrg = document.getElementById('orgChart').getContext('2d');
-        new Chart(ctxOrg, {
-            type: 'polarArea',
-            data: {
-                labels: processLabels(['당선 전략기획팀', '승리 조직유세팀', '킹 홍보미디어팀', '비전 정책공약팀', '튼튼 재정회계팀']),
-                datasets: [{
-                    label: '업무 집중도',
-                    data: [90, 85, 95, 80, 70], // High focus on PR/Strategy early on
-                    backgroundColor: [
-                        'rgba(59, 130, 246, 0.7)', // Blue
-                        'rgba(234, 179, 8, 0.7)',  // Yellow
-                        'rgba(239, 68, 68, 0.7)',  // Red
-                        'rgba(34, 197, 94, 0.7)',  // Green
-                        'rgba(107, 114, 128, 0.7)' // Gray
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: { position: 'right', labels: { boxWidth: 10 } },
-                    tooltip: commonTooltipOptions
-                },
-                scales: {
-                    r: {
-                        ticks: { display: false },
-                        grid: { color: '#E2E8F0' }
-                    }
-                }
-            }
-        });
-
-        // --- Chart 3: Digital Infrastructure (Doughnut) ---
-        const ctxDigital = document.getElementById('digitalChart').getContext('2d');
-        new Chart(ctxDigital, {
-            type: 'doughnut',
-            data: {
-                labels: processLabels(['Notion (통합 대시보드)', 'KakaoTalk (긴급 소통)', 'Google Drive (백업/아카이브)']),
-                datasets: [{
-                    data: [70, 20, 10],
-                    backgroundColor: ['#FFFFFF', '#FEE500', '#34A853'], // White for Notion (on dark bg context), Kakao Yellow, Google Green
-                    borderColor: '#1E293B', // Dark border to separate segments
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: { position: 'bottom', labels: { color: '#2C3E50' } },
-                    tooltip: commonTooltipOptions
-                },
-                cutout: '60%'
-            }
-        });
-
-        // --- Chart 4: Timeline (Bar Chart) ---
-        const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
-        new Chart(ctxTimeline, {
-            type: 'bar',
-            data: {
-                labels: processLabels(['12/9 (화) 기획', '12/10 (수) 준비', '12/11 (목) 촬영', '12/12-14 (주말) 편집', '12/15 (월) 공개']),
-                datasets: [{
-                    label: '업무 강도 (Intensity)',
-                    data: [60, 50, 100, 80, 90], // Peak at filming and release
-                    backgroundColor: '#FF4500',
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: commonTooltipOptions
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: { display: false },
-                        ticks: { display: false }
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: commonTooltipOptions
                     },
-                    x: {
-                        grid: { display: false }
+                    scales: {
+                        r: {
+                            angleLines: { color: '#E2E8F0' },
+                            grid: { color: '#E2E8F0' },
+                            pointLabels: {
+                                font: { size: 12, family: "'Noto Sans KR', sans-serif", weight: 'bold' }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // --- Chart 5: Targets (Stacked Bar) ---
-        const ctxTarget = document.getElementById('targetChart').getContext('2d');
-        new Chart(ctxTarget, {
-            type: 'bar',
-            data: {
-                labels: processLabels(['지저동 (침수지역)', '공항 인근 (소음피해)', '구도심 (재개발)', '신서혁신도시']),
-                datasets: [{
-                    label: '2030 청년층 (변화)',
-                    data: [30, 40, 20, 70],
-                    backgroundColor: '#00BFFF'
-                }, {
-                    label: '4050 중장년층 (숙원)',
-                    data: [70, 60, 80, 30],
-                    backgroundColor: '#FFD700'
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    tooltip: commonTooltipOptions
+            // --- Chart 2: Organization Structure (Polar Area) ---
+            const ctxOrg = document.getElementById('orgChart').getContext('2d');
+            new Chart(ctxOrg, {
+                type: 'polarArea',
+                data: {
+                    labels: processLabels(['당선 전략기획팀', '승리 조직유세팀', '킹 홍보미디어팀', '비전 정책공약팀', '튼튼 재정회계팀']),
+                    datasets: [{
+                        label: '업무 집중도',
+                        data: [90, 85, 95, 80, 70], // High focus on PR/Strategy early on
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.7)', // Blue
+                            'rgba(234, 179, 8, 0.7)',  // Yellow
+                            'rgba(239, 68, 68, 0.7)',  // Red
+                            'rgba(34, 197, 94, 0.7)',  // Green
+                            'rgba(107, 114, 128, 0.7)' // Gray
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    x: { stacked: true, grid: { display: false } },
-                    y: { stacked: true, display: false }
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'right', labels: { boxWidth: 10 } },
+                        tooltip: commonTooltipOptions
+                    },
+                    scales: {
+                        r: {
+                            ticks: { display: false },
+                            grid: { color: '#E2E8F0' }
+                        }
+                    }
                 }
-            }
-        });
+            });
 
+            // --- Chart 3: Digital Infrastructure (Doughnut) ---
+            const ctxDigital = document.getElementById('digitalChart').getContext('2d');
+            new Chart(ctxDigital, {
+                type: 'doughnut',
+                data: {
+                    labels: processLabels(['Notion (통합 대시보드)', 'KakaoTalk (긴급 소통)', 'Google Drive (백업/아카이브)']),
+                    datasets: [{
+                        data: [70, 20, 10],
+                        backgroundColor: ['#FFFFFF', '#FEE500', '#34A853'], // White for Notion (on dark bg context), Kakao Yellow, Google Green
+                        borderColor: '#1E293B', // Dark border to separate segments
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        // 배경이 어두운 섹션이므로, 범례 색상을 흰색으로 변경하여 가독성을 확보합니다.
+                        legend: { position: 'bottom', labels: { color: '#FFFFFF' } },
+                        tooltip: commonTooltipOptions
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            // --- Chart 4: Timeline (Bar Chart) ---
+            const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+            new Chart(ctxTimeline, {
+                type: 'bar',
+                data: {
+                    labels: processLabels(['12/9 (화) 기획', '12/10 (수) 준비', '12/11 (목) 촬영', '12/12-14 (주말) 편집', '12/15 (월) 공개']),
+                    datasets: [{
+                        label: '업무 강도 (Intensity)',
+                        data: [60, 50, 100, 80, 90], // Peak at filming and release
+                        backgroundColor: '#FF4500',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: commonTooltipOptions
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { display: false },
+                            ticks: { display: false }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+
+            // --- Chart 5: Targets (Stacked Bar) ---
+            const ctxTarget = document.getElementById('targetChart').getContext('2d');
+            new Chart(ctxTarget, {
+                type: 'bar',
+                data: {
+                    labels: processLabels(['지저동 (침수지역)', '공항 인근 (소음피해)', '구도심 (재개발)', '신서혁신도시']),
+                    datasets: [{
+                        label: '2030 청년층 (변화)',
+                        data: [30, 40, 20, 70],
+                        backgroundColor: '#00BFFF'
+                    }, {
+                        label: '4050 중장년층 (숙원)',
+                        data: [70, 60, 80, 30],
+                        backgroundColor: '#FFD700'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: commonTooltipOptions
+                    },
+                    scales: {
+                        x: { stacked: true, grid: { display: false } },
+                        y: { stacked: true, display: false }
+                    }
+                }
+            });
+        };
     </script>
 </body>
 </html>
