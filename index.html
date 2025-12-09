@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양희 2025: 선거 승리 전략 인포그래픽</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts (Noto Sans KR) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Palette & Plan Comments -->
+    <!-- 
+        Palette Name: Energetic & Playful (Justice Party Yellow + Cool Blue)
+        Colors: #FFD700 (Yellow), #00BFFF (Blue), #FF4500 (Red), #2C3E50 (Dark), #FFFFFF (White)
+    -->
+    <!--
+        Narrative Plan:
+        1. Intro/Hook: Establish the candidate's identity and the core "Winning Slogans".
+        2. Organization: Visualize the 5-team structure and their strategic roles using a Polar Area chart.
+        3. Infrastructure: Explain the Notion-based digital workflow using a Doughnut chart.
+        4. Timeline: Visualize the critical path for the "Candidate Interview" project using a Bar chart.
+        5. Strategy: Show the synergy between slogans and the field strategy using a Stacked Bar chart (Simulated data).
+    -->
+    <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in this output. -->
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F0F4F8;
+            color: #2C3E50;
+        }
+        
+        /* Chart Container Styling as per requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px;
+        }
+
+        /* Responsive height adjustments */
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-text {
+            color: #00BFFF; /* Cool Blue */
+        }
+        
+        .justice-text {
+            color: #FFD700; /* Justice Yellow - darkened slightly for text readability if needed, but keeping vibrant for headers */
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        .accent-bg {
+            background-color: #FFD700;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation / Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-4 h-8 bg-[#FFD700] rounded-sm"></div>
+                <h1 class="text-xl md:text-2xl font-black text-slate-800 tracking-tighter">RAFAEL CAMP <span class="text-[#00BFFF]">DASHBOARD</span></h1>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-600">
+                <a href="#vision" class="hover:text-[#00BFFF] transition">비전 & 슬로건</a>
+                <a href="#organization" class="hover:text-[#00BFFF] transition">조직 구성</a>
+                <a href="#system" class="hover:text-[#00BFFF] transition">디지털 시스템</a>
+                <a href="#timeline" class="hover:text-[#00BFFF] transition">실행 타임라인</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Section 1: Introduction & Slogans -->
+        <section id="vision" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 bg-slate-800 text-[#FFD700] text-xs font-bold rounded-full uppercase tracking-wide">
+                    2025 대구 동구청장 선거
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black leading-tight text-slate-900">
+                    오래된 동구 숙원,<br>
+                    <span class="text-[#FFD700] drop-shadow-sm" style="-webkit-text-stroke: 1px #eab308;">양희가</span> 
+                    <span class="text-[#00BFFF]">시원하게 끝냅니다!</span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    제1차 선거대책회의에서 확정된 핵심 메시지입니다. 
+                    후보의 <strong>'현장성'</strong>과 <strong>'최초의 승리 경험'</strong>을 바탕으로, 
+                    유권자들에게 강력한 해결사의 이미지를 각인시킵니다.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1 bg-slate-50 border-l-4 border-[#FFD700] p-4 rounded-r-lg">
+                        <span class="block text-xs font-bold text-slate-400 uppercase mb-1">Main Slogan</span>
+                        <p class="font-bold text-slate-800">"오래된 동구 숙원, 양희가 시원하게 끝냅니다!"</p>
+                    </div>
+                    <div class="flex-1 bg-slate-50 border-l-4 border-[#FF4500] p-4 rounded-r-lg">
+                        <span class="block text-xs font-bold text-slate-400 uppercase mb-1">Sub Slogan (Action)</span>
+                        <p class="font-bold text-slate-800">"양희가 끝낸다!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visualization: Slogan Impact Simulation (Simulated Data) -->
+            <div class="card p-6">
+                <div class="mb-4 border-b border-slate-100 pb-2">
+                    <h3 class="text-lg font-bold text-slate-800">슬로건별 기대 효과 분석</h3>
+                    <p class="text-sm text-slate-500">메인 슬로건과 보조 슬로건의 역할 분담</p>
+                </div>
+                <!-- HTML Comment: Data Point -> Goal: Compare -> Visualization: Radar Chart -> Justification: Shows how different slogans score on different emotional metrics -->
+                <div class="chart-container">
+                    <canvas id="sloganChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Organization Structure -->
+        <section id="organization">
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">선거본부 핵심 조직도</h2>
+                <p class="text-slate-600">
+                    <strong>Rafael 선대본부장</strong>을 중심으로 5개의 핵심 팀이 유기적으로 연결되어 있습니다. 
+                    각 팀은 명확한 R&R을 가지고 승리를 위해 움직입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Org Visualization -->
+                <div class="card p-6">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-bold text-slate-800">팀별 전략적 가중치 (Activity Weight)</h3>
+                        <p class="text-sm text-slate-500">초기 선거 전략 수립 단계에서의 업무 집중도</p>
+                    </div>
+                    <!-- HTML Comment: Data Point -> Goal: Organize/Compare -> Visualization: Polar Area Chart -> Justification: Shows the cyclic nature of the 5 teams surrounding the center and their current activity load. -->
+                    <div class="chart-container">
+                        <canvas id="orgChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Org Descriptions (HTML/Tailwind List) -->
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">당선 전략기획팀</h4>
+                            <p class="text-sm text-slate-600 mt-1">선거의 나침반. 메시지 개발 및 판세 분석 총괄.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">승리 조직유세팀</h4>
+                            <p class="text-sm text-slate-600 mt-1">현장의 힘. "양희가 끝낸다!" 구호와 함께 바닥 민심 훑기.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">킹 홍보미디어팀</h4>
+                            <p class="text-sm text-slate-600 mt-1">후보의 입. 심층 인터뷰 제작 및 온/오프라인 콘텐츠 생산.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold">4</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">비전 정책공약팀 & 튼튼 재정회계팀</h4>
+                            <p class="text-sm text-slate-600 mt-1">콘텐츠와 살림. 동구 맞춤형 공약 개발 및 투명한 자금 운용.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Digital Infrastructure (Notion) -->
+        <section id="system" class="bg-slate-800 rounded-2xl p-8 text-white shadow-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-[#FFD700]">디지털 워크스페이스 전략</h2>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        데이터 유실 방지와 실시간 협업을 위해 <strong>Notion</strong>을 주력 플랫폼으로 채택했습니다. 
+                        Google Drive는 아카이빙, 카카오톡은 긴급 알림용으로 보조합니다.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-[#00BFFF] rounded-full"></span>
+                            <span><strong>통합 대시보드:</strong> 오늘의 일정 자동 연동 (Table View)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-[#00BFFF] rounded-full"></span>
+                            <span><strong>3대 핵심 DB:</strong> 일정, 정책, 홍보 데이터 무결성 확보</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-2 h-2 bg-[#00BFFF] rounded-full"></span>
+                            <span><strong>권한 분리:</strong> 핵심 DB 잠금(Lock) 및 편집 권한 제한</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 class="text-lg font-bold mb-4 text-center">플랫폼 의존도 및 활용 비중</h3>
+                    <!-- HTML Comment: Data Point -> Goal: Compare/Proportion -> Visualization: Doughnut Chart -> Justification: Shows the clear dominance of Notion as the central hub. -->
+                    <div class="chart-container text-slate-900">
+                        <canvas id="digitalChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Timeline & Execution -->
+        <section id="timeline">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-2">후보 심층 인터뷰 프로젝트</h2>
+                <div class="w-20 h-1 bg-[#FF4500]"></div>
+                <p class="mt-4 text-slate-600">
+                    <strong>"오래된 동구 숙원, 양희가 시원하게 끝냅니다!"</strong> 슬로건을 각인시킬 첫 번째 핵심 프로젝트입니다.
+                    <span class="text-[#FF4500] font-bold">12월 15일(월) 저녁 6시 공개</span>를 목표로 역산된 일정입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Timeline Visualization -->
+                <div class="lg:col-span-2 card p-6">
+                    <div class="mb-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-slate-800">제작 및 배포 타임라인 (Workload Intensity)</h3>
+                        <span class="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">2025.12.09 - 12.15</span>
+                    </div>
+                    <!-- HTML Comment: Data Point -> Goal: Change/Schedule -> Visualization: Bar Chart (Time-based) -> Justification: Shows the sequence and intensity of work over the specific dates. -->
+                    <div class="chart-container">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="space-y-4">
+                    <div class="card p-5 border-l-4 border-slate-400">
+                        <span class="text-xs font-bold text-slate-400">D+1 (수)</span>
+                        <h4 class="font-bold text-slate-800">사전 기획 완료</h4>
+                        <p class="text-sm text-slate-600">질문지 확정, 장소 섭외 (홍보/정책)</p>
+                    </div>
+                    <div class="card p-5 border-l-4 border-[#FF4500]">
+                        <span class="text-xs font-bold text-[#FF4500]">D+2 (목) - CRITICAL</span>
+                        <h4 class="font-bold text-slate-800">메인 촬영</h4>
+                        <p class="text-sm text-slate-600">지저동 침수 현장 등 '숙원 현장' 배경 리포팅 포함</p>
+                    </div>
+                    <div class="card p-5 border-l-4 border-[#FFD700]">
+                        <span class="text-xs font-bold text-slate-500">D+3~5 (주말)</span>
+                        <h4 class="font-bold text-slate-800">편집 및 컨펌</h4>
+                        <p class="text-sm text-slate-600">스토리텔링 강화, 슬로건 자막 작업</p>
+                    </div>
+                    <div class="card p-5 border-l-4 border-[#00BFFF]">
+                        <span class="text-xs font-bold text-[#00BFFF]">D+6 (월) 18:00</span>
+                        <h4 class="font-bold text-slate-800">콘텐츠 공개</h4>
+                        <p class="text-sm text-slate-600">유튜브/SNS 동시 업로드 & 조직 공유</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Target Analysis -->
+         <section id="targets" class="card p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800 mb-4">현장 승리 전략: 타겟 집중</h2>
+                    <p class="text-slate-600 mb-4">
+                        <strong>"동구민의 가장 절실한 삶"</strong>을 파고듭니다. 
+                        침수 피해 지역과 공항 소음 피해 지역을 중심으로, 
+                        변화를 갈망하는 2030세대와 안정을 원하는 5060세대를 동시에 공략하는 
+                        <strong>'세대 통합형 해결사'</strong> 전략을 구사합니다.
+                    </p>
+                    <div class="mt-6 p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold text-slate-700 mb-2">홍보팀의 보조 슬로건 활용:</h4>
+                        <p class="text-xl font-black italic text-[#FF4500]">#양희가끝낸다</p>
+                        <p class="text-sm text-slate-500 mt-1">SNS 릴스 및 현장 숏폼 영상 태그 통일</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <!-- HTML Comment: Data Point -> Goal: Relationships/Compare -> Visualization: Stacked Bar Chart -> Justification: Shows the overlap of regional issues with age demographics to target. -->
+                    <canvas id="targetChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 border-t border-slate-200 pt-8 pb-12 text-center text-slate-500 text-sm">
+            <p class="font-bold text-slate-700">정의당 대구 동구청장 후보 양희 선거대책본부</p>
+            <p class="mt-2">본 인포그래픽은 제1차 선거대책회의 결과를 바탕으로 Rafael 선대본부장 보고용으로 작성되었습니다.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Helper Function: Label Wrapping (Strict 16-char logic) ---
+        function splitLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- Helper Function: Process Labels for Chart ---
+        function processLabels(labels) {
+            return labels.map(l => splitLabel(l));
+        }
+
+        // --- Common Tooltip Configuration (Required Title Callback) ---
+        const commonTooltipOptions = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- Chart 1: Slogan Impact (Radar Chart) ---
+        const ctxSlogan = document.getElementById('sloganChart').getContext('2d');
+        new Chart(ctxSlogan, {
+            type: 'radar',
+            data: {
+                labels: processLabels(['신뢰도 (Trust)', '행동 유발 (Action)', '기억 용이성', '정책 전달력', '감정 호소력']),
+                datasets: [{
+                    label: '메인: "오래된 숙원..."',
+                    data: [95, 70, 80, 100, 90],
+                    backgroundColor: 'rgba(255, 215, 0, 0.2)', // Yellow transparent
+                    borderColor: '#FFD700',
+                    pointBackgroundColor: '#FFD700',
+                    borderWidth: 2
+                }, {
+                    label: '보조: "양희가 끝낸다!"',
+                    data: [60, 100, 95, 50, 85],
+                    backgroundColor: 'rgba(0, 191, 255, 0.2)', // Blue transparent
+                    borderColor: '#00BFFF',
+                    pointBackgroundColor: '#00BFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E2E8F0' },
+                        grid: { color: '#E2E8F0' },
+                        pointLabels: {
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif", weight: 'bold' }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Organization Structure (Polar Area) ---
+        const ctxOrg = document.getElementById('orgChart').getContext('2d');
+        new Chart(ctxOrg, {
+            type: 'polarArea',
+            data: {
+                labels: processLabels(['당선 전략기획팀', '승리 조직유세팀', '킹 홍보미디어팀', '비전 정책공약팀', '튼튼 재정회계팀']),
+                datasets: [{
+                    label: '업무 집중도',
+                    data: [90, 85, 95, 80, 70], // High focus on PR/Strategy early on
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.7)', // Blue
+                        'rgba(234, 179, 8, 0.7)',  // Yellow
+                        'rgba(239, 68, 68, 0.7)',  // Red
+                        'rgba(34, 197, 94, 0.7)',  // Green
+                        'rgba(107, 114, 128, 0.7)' // Gray
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 10 } },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    r: {
+                        ticks: { display: false },
+                        grid: { color: '#E2E8F0' }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 3: Digital Infrastructure (Doughnut) ---
+        const ctxDigital = document.getElementById('digitalChart').getContext('2d');
+        new Chart(ctxDigital, {
+            type: 'doughnut',
+            data: {
+                labels: processLabels(['Notion (통합 대시보드)', 'KakaoTalk (긴급 소통)', 'Google Drive (백업/아카이브)']),
+                datasets: [{
+                    data: [70, 20, 10],
+                    backgroundColor: ['#FFFFFF', '#FEE500', '#34A853'], // White for Notion (on dark bg context), Kakao Yellow, Google Green
+                    borderColor: '#1E293B', // Dark border to separate segments
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#2C3E50' } },
+                    tooltip: commonTooltipOptions
+                },
+                cutout: '60%'
+            }
+        });
+
+        // --- Chart 4: Timeline (Bar Chart) ---
+        const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctxTimeline, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['12/9 (화) 기획', '12/10 (수) 준비', '12/11 (목) 촬영', '12/12-14 (주말) 편집', '12/15 (월) 공개']),
+                datasets: [{
+                    label: '업무 강도 (Intensity)',
+                    data: [60, 50, 100, 80, 90], // Peak at filming and release
+                    backgroundColor: '#FF4500',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { display: false },
+                        ticks: { display: false }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 5: Targets (Stacked Bar) ---
+        const ctxTarget = document.getElementById('targetChart').getContext('2d');
+        new Chart(ctxTarget, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['지저동 (침수지역)', '공항 인근 (소음피해)', '구도심 (재개발)', '신서혁신도시']),
+                datasets: [{
+                    label: '2030 청년층 (변화)',
+                    data: [30, 40, 20, 70],
+                    backgroundColor: '#00BFFF'
+                }, {
+                    label: '4050 중장년층 (숙원)',
+                    data: [70, 60, 80, 30],
+                    backgroundColor: '#FFD700'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
