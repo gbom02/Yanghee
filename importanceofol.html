@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캠페인 전략 목표 및 OL 중요도 인포그래픽</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    
+    <!-- Google Fonts (Noto Sans KR) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F8F9FA;
+            color: #2C3E50;
+        }
+        
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+
+        .main-yellow { color: #FFD700; }
+        .main-blue { color: #00BFFF; }
+        .bg-main-yellow { background-color: #FFD700; }
+        .bg-main-blue { background-color: #00BFFF; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header: Goal and Strategic Importance -->
+    <header class="bg-[#2C3E50] text-white py-8 shadow-2xl">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight flex items-center">
+                <span class="text-4xl main-yellow mr-3">🎯</span>
+                캠페인 최종 목표 및 OL 중요도 인포그래픽
+            </h1>
+            <p class="mt-2 text-slate-300">승리를 위한 핵심 지표 (40%)와 OL 50인 시스템의 결정적 역할 분석</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+        <!-- Section 1: Final Victory Target & Tipping Point (Gauge Chart) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-1 card p-6 h-full flex flex-col justify-center">
+                <h2 class="text-2xl font-bold mb-3 text-slate-800 border-l-4 border-[#FFD700] pl-3">
+                    최종 목표 & 임계점
+                </h2>
+                <p class="text-sm text-slate-500 mb-4">
+                    3자 구도 속 '다득표 승리' 달성을 위한 최소 기준과 최종 목표입니다.
+                </p>
+                <div class="flex items-center space-x-4 mb-2">
+                    <span class="text-xl font-black text-[#FF4500]">40%</span>
+                    <p class="text-slate-700">최종 득표 목표 (승리)</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-xl font-black text-[#00BFFF]">15%</span>
+                    <p class="text-slate-700">D-30 임계점 (양강 구도 전환)</p>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 card p-6">
+                <div class="mb-4">
+                    <h3 class="text-lg font-bold text-slate-800">승리 목표 달성 게이지 (40%)</h3>
+                    <p class="text-sm text-slate-500">임계점 (15%) 돌파가 승리의 전제입니다.</p>
+                </div>
+                <div class="chart-container">
+                    <!-- Gauge chart for 40% goal -->
+                    <canvas id="gaugeChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 3 Tipping Points Preconditions (Bar Chart) -->
+        <section class="card p-8">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800 border-b-2 border-slate-100 pb-3">
+                1. 최종 목표 대전제: 3가지 Tipping Points
+            </h2>
+            <p class="text-slate-600 mb-6">승리(40%) 달성은 아래 3가지 핵심 전제가 동시에 충족될 때만 가능합니다.</p>
+            
+            <div class="chart-container h-[300px]">
+                <!-- Bar chart for 3 Tipping Points -->
+                <canvas id="tippingPointsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 3: OL 50 Strategic Importance & Policy Gap (Horizontal Bar Chart) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div class="card p-6 flex flex-col justify-between">
+                <h2 class="text-2xl font-bold mb-4 text-[#FF4500] border-b border-slate-100 pb-2">
+                    2. OL 50인 관리의 전략적 중요성
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl text-[#00BFFF]">①</span>
+                        <div>
+                            <h3 class="font-bold text-slate-800">여론 확산 파이프라인 (5,000명 잠재 동원)</h3>
+                            <p class="text-sm text-slate-600">임계점 15% 돌파를 위한 여론 확산의 핵심 통로.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-2xl text-[#00BFFF]">②</span>
+                        <div>
+                            <h3 class="font-bold text-slate-800">정책 공감도 Gap 해소의 주축</h3>
+                            <p class="text-sm text-slate-600">정책 동의도 (5.2점 → 9.0점) 향상 없이는 진정성 전파 불가.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm font-bold text-slate-500">
+                    OL 50인이 '이길 수 있다'는 확신을 전파해야 중도/부동층이 움직입니다.
+                </p>
+            </div>
+
+            <div class="card p-6">
+                <div class="mb-4">
+                    <h3 class="text-lg font-bold text-slate-800">정책 동의 점수 Gap (10점 만점)</h3>
+                    <p class="text-sm text-slate-500">OL 50인 전원의 공감도 개선이 최우선 과제입니다.</p>
+                </div>
+                <div class="chart-container">
+                    <!-- Policy Gap Chart -->
+                    <canvas id="policyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Key Action Goals (Cards) -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6 text-slate-800 border-b-2 border-slate-100 pb-3">
+                3. 핵심 실행 목표 (Key Action Goals)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                
+                <div class="card p-6 border-t-4 border-[#00BFFF]">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="text-3xl text-[#00BFFF]">👤</span>
+                        <h3 class="font-extrabold text-lg text-slate-800">우호적 상태 전환</h3>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        대상: OL 50인 전원.
+                        모든 OL을 단순 접촉 대상이 아닌, 지지를 표명하는 '우호적' 상태로 전환합니다.
+                    </p>
+                </div>
+
+                <div class="card p-6 border-t-4 border-[#FFD700]">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="text-3xl text-[#FFD700]">🤝</span>
+                        <h3 class="font-extrabold text-lg text-slate-800">정책 비전 공유회</h3>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        대상: 정책 동의도 높은 OL 10인.
+                        D-60 내 개최하여 이들을 '핵심 리더십 그룹'으로 공식화하고 연대 확산을 시도합니다.
+                    </p>
+                </div>
+
+                <div class="card p-6 border-t-4 border-[#FF4500]">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="text-3xl text-[#FF4500]">🔒</span>
+                        <h3 class="font-extrabold text-lg text-slate-800">리스크 최소화</h3>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        대상: OL 50인 전원.
+                        리스크 점수 1점 이하 (10점 만점에 낮을수록 좋음) 유지하여 잡음 없는 조직 동원을 보장합니다.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chart.js Scripts -->
+    <script>
+        // Color Definitions
+        const COLORS = {
+            yellow: '#FFD700', // Justice Yellow
+            blue: '#00BFFF',   // Cool Blue
+            dark: '#2C3E50',   // Dark Slate
+            red: '#FF4500',    // Action Red
+            gray: '#E0E7FF'    // Light Background
+        };
+
+        // --- Chart 1: Victory Gauge (Doughnut Chart) ---
+        const ctxGauge = document.getElementById('gaugeChart').getContext('2d');
+        const totalGoal = 40;
+        new Chart(ctxGauge, {
+            type: 'doughnut',
+            data: {
+                labels: ['최종 목표 달성', '추가 필요'],
+                datasets: [{
+                    data: [totalGoal, 100 - totalGoal],
+                    backgroundColor: [COLORS.red, COLORS.gray],
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: false // Custom text will handle this
+                    }
+                },
+                // Custom text plugin for center display
+                // Tipping Point 15% needs custom drawing
+                plugins: [{
+                    id: 'customGaugeText',
+                    beforeDraw: (chart) => {
+                        const { width, height, ctx, chartArea: { top, bottom, left, right } } = chart;
+                        ctx.restore();
+                        
+                        // Center Text: 40% Goal
+                        const xCenter = (left + right) / 2;
+                        const yCenter = (top + bottom) / 2;
+                        
+                        ctx.font = '900 40px "Noto Sans KR"';
+                        ctx.fillStyle = COLORS.red;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText('40%', xCenter, yCenter - 10);
+                        
+                        ctx.font = '700 14px "Noto Sans KR"';
+                        ctx.fillStyle = COLORS.dark;
+                        ctx.fillText('승리 목표', xCenter, yCenter + 20);
+
+                        // Tipping Point Pointer (15% of 360 degrees, starting at 270 deg)
+                        const tippingPointPercent = 15;
+                        const radius = chart.getDatasetMeta(0).data[0].outerRadius;
+                        
+                        // Calculate position for 15% mark (15/100 * 360 = 54 degrees)
+                        // Start point is 270 degrees (top of circle)
+                        const angleRadians = (270 + (tippingPointPercent / 100) * 360) * (Math.PI / 180);
+                        
+                        const pointerX = xCenter + radius * Math.cos(angleRadians);
+                        const pointerY = yCenter + radius * Math.sin(angleRadians);
+
+                        // Draw pointer line
+                        ctx.beginPath();
+                        ctx.moveTo(xCenter, yCenter);
+                        ctx.lineTo(pointerX, pointerY);
+                        ctx.strokeStyle = COLORS.blue;
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+
+                        // Draw Tipping Point Text
+                        ctx.font = '700 12px "Noto Sans KR"';
+                        ctx.fillStyle = COLORS.blue;
+                        // Position text slightly outside the pointer line
+                        const textOffsetX = radius * 1.05 * Math.cos(angleRadians);
+                        const textOffsetY = radius * 1.05 * Math.sin(angleRadians);
+
+                        ctx.textAlign = (tippingPointPercent < 50) ? 'left' : 'right';
+                        ctx.fillText('15% 임계점', xCenter + textOffsetX, yCenter + textOffsetY);
+
+                        ctx.save();
+                    }
+                }]
+            }
+        });
+
+        // --- Chart 2: 3 Tipping Points Preconditions (Bar Chart) ---
+        const ctxTipping = document.getElementById('tippingPointsChart').getContext('2d');
+        new Chart(ctxTipping, {
+            type: 'bar',
+            data: {
+                labels: ['보수 이탈 흡수 극대화 (20%)', '미래 변화 압도 (70%)', '양강 구도 구축 (15% Frame)'],
+                datasets: [{
+                    label: '필수 기여 목표 (%)',
+                    data: [20, 70, 15],
+                    backgroundColor: [
+                        COLORS.dark, // 보수
+                        COLORS.blue, // 미래 변화
+                        COLORS.red   // 구도 구축
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: '필수 기여 목표 (%)'
+                        }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 3: Policy Gap Chart (Horizontal Bar Chart) ---
+        const ctxPolicy = document.getElementById('policyChart').getContext('2d');
+        new Chart(ctxPolicy, {
+            type: 'bar',
+            data: {
+                labels: ['정책 동의 점수 (10점 만점)'],
+                datasets: [{
+                    label: '현재 점수 (추정)',
+                    data: [5.2],
+                    backgroundColor: COLORS.yellow,
+                    stack: 'stack1',
+                    borderRadius: 4
+                }, {
+                    label: '목표 점수',
+                    data: [9.0 - 5.2], // Stacked to show the target
+                    backgroundColor: COLORS.blue,
+                    stack: 'stack1',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                // Display total score 9.0 for the target, and 5.2 for current
+                                if (context.datasetIndex === 0) {
+                                    label += '5.2점';
+                                } else {
+                                    label += '9.0점 달성 필요';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        min: 0,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: '점수 (10점 만점)'
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
